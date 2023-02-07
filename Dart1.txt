@@ -191,5 +191,82 @@ iconTheme: IconThemeData(color: Colors.black),
 
 toolbarTextStyle: Theme.of(context).textTheme.bodyMedium, 
 titleTextStyle: Theme.of(context).textTheme.titleLarge,
-
 ),
+
+
+
+class MyTheme
+{
+static ThemeData lightTheme(BuildContext context)=>ThemeData(
+primarySwatch: Colors.deepPurple,
+fontFamily: GoogleFonts.lato().fontFamily,
+appBarTheme: AppBarTheme(
+color: Colors.white,
+elevation: 0.0,
+iconTheme: IconThemeData(color: Colors.black),
+textTheme: Theme.of(context).textTheme,
+)
+);
+
+
+
+class Item{
+
+final Stirng id;
+final Stirng name;
+final String desc;
+final num price;
+final String color;
+final String image;
+
+Item({required this.id, required this.name, required this.price, required this.price, required this.color, required this.image});
+}
+
+class CatModel{
+
+static final item=[Item(
+id: 1;
+name: "iPhone";
+desc: "Apple iPhone";
+price: 999,
+color: "white",
+image: "https://iPhone.jpg",
+)];
+
+}
+
+
+
+ListView.builder(
+itemCount: CatModel.item.length,
+itemBuilder: (context, index){
+return ItemWidget();
+},
+),
+
+
+stless{
+
+final Item item;
+
+const ItemWidget({Key key, requird this.item})
+: assert(item!= null),
+super(key: key);
+
+return Card(
+ListTile(
+leading: Image.network(item.image),
+title: Text(item.name),
+subtitle: Text(item.desc),
+trailing: Text(
+"\$${
+item.prixe.toString()
+}",
+textScaleFactor: 1.23,
+style: TextStyle(
+color: Colors.white,
+fontweight: FontWeight.bold,
+),
+),
+);
+}
